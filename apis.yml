@@ -1,7 +1,28 @@
 aid: skipthedishes
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/skipthedishes.png
 name: Skipthedishes
-description: Skipthedishes is a company surfaced as a portfolio company of felicis and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  SkipTheDishes is a Canadian online food-delivery marketplace headquartered in Winnipeg,
+  Manitoba, founded in 2012 and acquired by Just Eat (now Just Eat Takeaway.com) in 2016,
+  under which it operates as the group's Canadian brand. It connects diners with local
+  restaurants and a network of independent couriers for on-demand food delivery and pickup
+  across Canadian cities via its consumer website and mobile apps, and runs a restaurant
+  partner onboarding program and a courier (Skip Network) program. As of this enrichment
+  pass SkipTheDishes publishes no public developer API, developer portal, or API
+  documentation. The primary domain is served behind Cloudflare bot protection and the
+  partner/partners subdomains are static marketing/onboarding pages, so no OpenAPI, webhook,
+  or SDK surface is available to harvest.
 url: https://raw.githubusercontent.com/api-evangelist/skipthedishes/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +32,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Food Delivery
+- Restaurants
+- Couriers
+- Logistics
+- Marketplace
+- Online Ordering
+- Canada
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +51,16 @@ maintainers:
 common:
 - type: Website
   url: https://skipthedishes.com
+- type: SignUp
+  url: https://partner.skipthedishes.com
+x-enrichment:
+  date: '2026-07-21'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
+  notes: >-
+    Probed DNS, TLS, /.well-known/*, and developer/docs/api/partner subdomains via curl;
+    no public developer API surface found. Main domain hard-blocked by Cloudflare; partner
+    subdomains are S3-hosted restaurant-onboarding marketing pages. Ownership confirmed as
+    Just Eat Takeaway.com via DMARC rua=takeaway.com. WebSearch budget exhausted and
+    WebFetch classifier intermittent, but Bash/curl probes completed.
